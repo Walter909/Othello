@@ -37,7 +37,7 @@ public class BoardState {
             if(this.currentPlayerColor == Color.BLACK)
                 this.currentPlayerColor = Color.WHITE;
 
-            if(this.currentPlayerColor == Color.WHITE)
+            else
                 this.currentPlayerColor = Color.BLACK;
         }
 

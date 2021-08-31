@@ -4,4 +4,16 @@ Mouse should be used to drop pieces on the boardState
 
 The piece should change color after mouse is clicked
 
+Rules
+================================
+Something to capture other pieces
+
+Horizontal, vertical AND diagonal
+
+Validation logic for where we can place pieces(Check if move is valid)
+
+Keeping track of number of pieces for each player
+
+note:
+try to implement one by one
 
