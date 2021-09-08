@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class Othello extends PApplet {
 
@@ -7,6 +8,12 @@ public class Othello extends PApplet {
 
     public void settings() {
         size(500, 500);
+    }
+
+    public void setup(){
+        PFont f;
+        f = createFont("Arial",16,true); // Arial, 16 point, anti-aliasing on
+        textFont(f,20);
     }
 
     public void draw() {
@@ -27,7 +34,7 @@ public class Othello extends PApplet {
             line(start, y, 0, y);
         }
 
-        //Drawing grid
+        //Drawing pieces
         for (int i = 0; i < boardState.grid.length; i++) {
             for (int j = 0; j < boardState.grid.length; j++) {
                 if (boardState.grid[i][j] == Color.WHITE) {
@@ -44,6 +51,16 @@ public class Othello extends PApplet {
         }
 
         boardState.setBoardState(mouseX,mouseY,mousePressed);
+
+        //Adding piece count
+        if(boardState.currentPlayerColor == Color.BLACK){
+            fill(0);
+        }
+        else {
+           fill(255);
+        }
+        text("White piece:" + boardState.piecesWhite, 10 ,20);
+        text("Black piece:" + boardState.piecesBlack, 10 ,45);
     }
 
     public static void main(String[] passedArgs) {

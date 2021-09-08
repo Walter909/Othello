@@ -3,6 +3,8 @@ public class BoardState {
     //Instance variables
     Color currentPlayerColor;
     Color[][] grid = new Color[10][10];
+    int piecesWhite = 2;
+    int piecesBlack = 2;
 
     //Constructor
     public BoardState(Color currentPlayerColor){
@@ -34,11 +36,14 @@ public class BoardState {
 
             this.grid[i][j] = this.currentPlayerColor;
 
-            if(this.currentPlayerColor == Color.BLACK)
+            if(this.currentPlayerColor == Color.BLACK){
                 this.currentPlayerColor = Color.WHITE;
-
-            else
+                this.piecesBlack++;
+            }
+            else {
                 this.currentPlayerColor = Color.BLACK;
+                this.piecesWhite++;
+            }
         }
 
     }
